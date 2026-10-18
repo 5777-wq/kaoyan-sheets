@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>考研总站 | 材料力学 / 数学 / 英语</title>
+<meta name="theme-color" content="#C2402F">
+<meta name="description" content="考研总站：材料力学复习手册、考研数学公式看板、英语作文模板、DuoGrader 智能批改，一站直达。">
+<meta property="og:title" content="考研总站">
+<meta property="og:description" content="四个学习站一个入口：材料力学 / 数学公式 / 英语作文 / 智能批改">
+<meta property="og:type" content="website">
+<style>
+:root{--paper:#F5F0E4;--paper2:#FDFBF3;--ink:#1D2637;--ink2:#49566E;--faint:#8A93A5;
+--verm:#C2402F;--orange:#D9640E;--blue:#2B6CB0;--green:#2F855A;--rule:#cfc5a9;--rule2:#e3dcc6;
+--serif:"Source Han Serif SC","Noto Serif SC",Georgia,"Songti SC",serif;
+--mono:ui-monospace,"SF Mono",Consolas,"Cascadia Mono",monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
+background-image:linear-gradient(#e9e2cf 1px,transparent 1px),linear-gradient(90deg,#e9e2cf 1px,transparent 1px);background-size:28px 28px}
+.frame{position:fixed;inset:10px;border:1.5px solid var(--ink);pointer-events:none;z-index:60}
+.corners span{position:absolute;width:15px;height:15px;z-index:61;pointer-events:none}
+.corners span::before{content:"";position:absolute;left:50%;top:-1px;bottom:-1px;width:1.5px;background:var(--ink);transform:translateX(-50%)}
+.corners span::after{content:"";position:absolute;top:50%;left:-1px;right:-1px;height:1.5px;background:var(--ink);transform:translateY(-50%)}
+.corners span:nth-child(1){top:3px;left:3px}.corners span:nth-child(2){top:3px;right:3px}
+.corners span:nth-child(3){bottom:3px;left:3px}.corners span:nth-child(4){bottom:3px;right:3px}
+.wrap{position:relative;z-index:1;max-width:1060px;margin:0 auto;padding:46px 44px 96px}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;
+padding-bottom:20px;border-bottom:2px solid var(--ink)}
+.kicker{font:600 11px/1 var(--mono);letter-spacing:.34em;color:var(--verm)}
+h1{font-size:30px;margin:10px 0 8px;letter-spacing:.02em}
+h1 .dot{color:var(--verm)}
+.sub{font-size:13px;color:var(--ink2);letter-spacing:.08em}
+.sub b{color:var(--ink)}
+.byline{margin-top:8px;font:600 11px var(--mono);letter-spacing:.14em;color:var(--ink2)}
+.byline span{font-family:var(--serif);font-size:13.5px;font-weight:700;color:var(--ink);letter-spacing:.02em}
+.hdr-side{display:flex;align-items:flex-end;gap:16px}
+.dim{text-align:center;min-width:290px;position:relative;padding:0 26px}
+.dim::before,.dim::after{content:"";position:absolute;top:10px;bottom:30px;width:1.5px;background:var(--ink)}
+.dim::before{left:0}
+.dim::after{right:0}
+.dim .dl{position:relative;height:12px;margin-bottom:4px}
+.dim .dl::before{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:var(--ink)}
+.dim .dl i{position:absolute;top:-4px;bottom:-4px;width:1.5px;background:var(--ink)}
+.dim .dl i.l{left:0}
+.dim .dl i.r{right:0}
+.dim .arr{position:absolute;top:50%;width:0;height:0;border:5px solid transparent;transform:translateY(-50%)}
+.dim .arr.l{left:1px;border-right:9px solid var(--ink);border-left:none}
+.dim .arr.r{right:1px;border-left:9px solid var(--ink);border-right:none}
+.dim .n{font:700 74px/1 var(--serif);color:var(--verm);letter-spacing:.01em}
+.dim .cap{margin-top:9px;font:600 10px var(--mono);letter-spacing:.24em;color:var(--ink2)}
+.dim .cap2{margin-top:4px;font-size:11.5px;color:var(--ink2);letter-spacing:.3em;text-indent:.3em}
+.dim .mstrip{display:none}
+.vol-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:34px 0 4px;
+border-bottom:2px solid var(--ink);padding-bottom:8px}
+.vol-h .k{font:600 9.5px var(--mono);letter-spacing:.26em;color:var(--faint)}
+.vol-h h2{font-size:17px;margin:4px 0 0;letter-spacing:.03em}
+.vol-h .pc{font:600 10px var(--mono);color:var(--ink2);letter-spacing:.1em}
+.sheets{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px}
+a.sheet{display:block;position:relative;text-decoration:none;color:inherit;background:var(--paper2);
+border:1.5px solid var(--ink);box-shadow:5px 5px 0 rgba(29,38,55,.18);padding:18px 20px 16px;
+transition:transform .12s ease,box-shadow .12s ease;overflow:hidden}
+a.sheet:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(29,38,55,.22)}
+a.sheet:active{transform:translate(1px,1px);box-shadow:2px 2px 0 rgba(29,38,55,.2)}
+.sheet .big{position:absolute;right:8px;bottom:-14px;font:700 92px/1 var(--serif);color:var(--ink);opacity:.06;pointer-events:none}
+.sheet .row1{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.sheet .no{font:700 9.5px var(--mono);letter-spacing:.18em;color:var(--faint)}
+.sheet .fq{font:700 9.5px var(--mono);letter-spacing:.14em;color:var(--paper2);background:var(--ink);padding:3px 9px}
+.sheet h3{font-size:21px;margin:10px 0 7px;letter-spacing:.02em}
+.sheet h3 em{font-style:normal;color:var(--verm)}
+.sheet p{margin:0 0 12px;font-size:12.5px;line-height:1.75;color:var(--ink2)}
+.sheet .meta{display:flex;align-items:center;justify-content:space-between;gap:8px;
+border-top:1px dashed var(--rule2);padding-top:10px}
+.sheet .url{font:600 10px var(--mono);letter-spacing:.06em;color:var(--faint)}
+.sheet .go{font:700 11px var(--mono);letter-spacing:.14em;color:var(--ink);
+border:1.5px solid var(--ink);background:var(--paper);padding:5px 12px;white-space:nowrap}
+a.sheet:hover .go{background:var(--ink);color:var(--paper2)}
+.note{margin-top:26px;font-size:12.5px;color:var(--ink2);letter-spacing:.03em;line-height:1.8}
+.tblock{margin-top:30px;border:1.5px solid var(--ink);background:var(--paper2);
+display:grid;grid-template-columns:2.1fr 1fr .65fr 1.1fr .95fr 1.15fr .95fr}
+.tb{padding:11px 15px;border-left:1px solid var(--rule2);white-space:nowrap}
+.tb:first-child{border-left:none}
+.tb .l{font-size:9px;letter-spacing:.22em;color:var(--faint);font-weight:700;margin-bottom:5px}
+.tb .v{font:700 12.5px var(--mono);color:var(--ink);letter-spacing:.04em}
+.tb.name .v{font-family:var(--serif);font-weight:800;font-size:15px;letter-spacing:.03em}
+.tb.name .e{font:600 8px var(--mono);letter-spacing:.24em;color:var(--faint);margin-top:4px}
+@media(max-width:760px){
+  .wrap{padding:30px 18px 72px}
+  h1{font-size:24px}
+  .kicker{font-size:9px;letter-spacing:.2em}
+  .sub{font-size:12px}
+  .byline{font-size:10px !important;letter-spacing:.08em !important}
+  .byline span{font-size:12px !important}
+  .sheets{grid-template-columns:1fr}
+  .sheet .row1{flex-wrap:wrap;row-gap:6px}
+  .sheet .meta{flex-wrap:wrap;row-gap:8px}
+  .hdr-side{width:100%}
+  .dim{min-width:0;padding:0;width:100%}
+  .dim::before,.dim::after{content:none}
+  .dim .dl,.dim .n,.dim .cap,.dim .cap2{display:none}
+  .dim .mstrip{display:flex;align-items:baseline;justify-content:center;gap:9px;width:100%;
+    border:1.5px solid var(--ink);background:var(--paper2);box-shadow:4px 4px 0 rgba(29,38,55,.22);
+    padding:11px 12px 10px}
+  .dim .mstrip .mt{font:600 13px/1 var(--serif);color:var(--ink);letter-spacing:.06em}
+  .dim .mstrip b{font:700 30px/1 var(--serif);color:var(--verm);letter-spacing:.01em}
+  .dim .mstrip .md{font:600 9.5px var(--mono);color:var(--ink2);letter-spacing:.16em}
+  .cdbox{flex:1}
+  .tblock{grid-template-columns:1fr 1fr}
+  .tb{border-top:1px solid var(--rule2);white-space:normal}
+  .tb:nth-child(-n+2){border-top:none}
+  .tb:nth-child(2n+1){border-left:none}
+  .tb:nth-child(2){border-left:1px solid var(--rule2)}
+  .tb.name{grid-column:1 / -1;border-left:none !important}
+}
+html,body{overflow-x:hidden}
+/* ---------- 旧内核兜底（微信 X5 等）：显式长写定位 + 间距回退 ---------- */
+.frame{left:10px;right:10px;top:10px;bottom:10px}
+.corners{position:fixed;left:10px;right:10px;top:10px;bottom:10px;pointer-events:none}
+.sheet .row1 .fq{margin-left:auto}
+.sheet .meta .go{margin-left:auto}
+.dim .mstrip > *{margin:0 3px}
+.note i{margin-right:4px}
+
+@media(max-width:760px){html,body{overflow-x:hidden}}
+</style>
+</head>
+<body>
+<div class="frame"></div>
+<div class="corners"><span></span><span></span><span></span><span></span></div>
+<div class="wrap">
+
+<header>
+  <div>
+    <div class="kicker">KAOYAN HUB · SITE INDEX</div>
+    <h1>考研总站</h1>
+    <div class="sub">四个学习站 · 一个入口 —— <b>材料力学 / 数学公式 / 英语作文 / 智能批改</b></div>
+    <div class="byline">作者 · 科大长香路　·　connect me · <span>onething_57@foxmail.com</span></div>
+  </div>
+  <div class="hdr-side">
+    <div class="dim" id="cd"></div>
+  </div>
+</header>
+
+<div class="vol-h">
+  <div><span class="k">SITE INDEX · 站点目录</span><h2>站点目录</h2></div>
+  <span class="pc">4 SITES · 点击任意卡片进入</span>
+</div>
+
+<div class="sheets">
+  <a class="sheet" href="https://mm802-review.pages.dev/">
+    <span class="big">01</span>
+    <div class="row1"><span class="no">NO.01 · 材料力学</span><span class="fq">江科大 802</span></div>
+    <h3>材料力学 <em>· 复习手册</em></h3>
+    <p>刘鸿文第6版 · 802 全考点图文讲义 54 个知识点 · 重点书后习题 30 道（可点开看原题）· 公式速查页 · 官方考纲 PDF · 支持离线</p>
+    <div class="meta"><span class="url">mm802-review.pages.dev</span><span class="go">进入 ▸</span></div>
+  </a>
+  <a class="sheet" href="https://math-formula-board.pages.dev/">
+    <span class="big">02</span>
+    <div class="row1"><span class="no">NO.02 · 数学</span><span class="fq">数学一 / 数学二</span></div>
+    <h3>考研数学 <em>· 公式看板</em></h3>
+    <p>依据 2027 考试大纲 · 全考点逐条拆到公式级 · 396 条公式 · 大编号章节卡 · 必背标记 · 等价无穷小与泰勒展开全表 · 公式速查页</p>
+    <div class="meta"><span class="url">math-formula-board.pages.dev</span><span class="go">进入 ▸</span></div>
+  </a>
+  <a class="sheet" href="https://kaoyan-essay.pages.dev/">
+    <span class="big">03</span>
+    <div class="row1"><span class="no">NO.03 · 英语</span><span class="fq">小作文 + 大作文</span></div>
+    <h3>英语作文 <em>· 模板手册</em></h3>
+    <p>功能句笔记 · 个人模板定制 · 真题范文带图解 · 背诵定位，考前模板一页速查</p>
+    <div class="meta"><span class="url">kaoyan-essay.pages.dev</span><span class="go">进入 ▸</span></div>
+  </a>
+  <a class="sheet" href="https://duograder.pages.dev/">
+    <span class="big">04</span>
+    <div class="row1"><span class="no">NO.04 · 英语</span><span class="fq">AI 批改</span></div>
+    <h3>DuoGrader <em>· 作文批改</em></h3>
+    <p>考研英语作文智能批改：提交作文 → AI 按考研评分标准打分、逐句点评、给出升级版表达</p>
+    <div class="meta"><span class="url">duograder.pages.dev</span><span class="go">进入 ▸</span></div>
+  </a>
+</div>
+
+<div class="note">※ 各子站页底均有「返回总站」入口；收藏本页即可一站直达全部复习资料。考试日期 2026-12-19（官方公布后更新）。</div>
+
+<div class="tblock">
+  <div class="tb name"><div class="l">站点 HUB</div><div class="v">考研总站 · 总目录</div><div class="e">SITE DIRECTORY</div></div>
+  <div class="tb"><div class="l">编号 NO.</div><div class="v">HUB-000</div></div>
+  <div class="tb"><div class="l">比例 SCALE</div><div class="v">1 : 1</div></div>
+  <div class="tb"><div class="l">制图 DRAWN</div><div class="v">GLM-5.3-Flash</div></div>
+  <div class="tb"><div class="l">审核 CHECKED</div><div class="v">科大长香路</div></div>
+  <div class="tb"><div class="l">日期 DATE</div><div class="v">2026-10-15</div></div>
+  <div class="tb"><div class="l">版本 REV.</div><div class="v">SET-1</div></div>
+</div>
+
+</div>
+<script>
+(function(){
+  var EXAM = "2026-12-19", pp = EXAM.split("-"), exam = new Date(+pp[0], +pp[1]-1, +pp[2]);
+  var now = new Date(); now.setHours(0,0,0,0);
+  var left = Math.round((exam - now)/86400000);
+  var dl = '<div class="dl"><i class="l"></i><i class="r"></i><span class="arr l"></span><span class="arr r"></span></div>';
+  if (left > 0){
+    document.getElementById("cd").innerHTML =
+      dl + '<div class="n">0</div><div class="cap">DAYS TO EXAM · ' + EXAM + '</div>' +
+      '<div class="cap2">距 考 研 还 有 ' + left + ' 天</div>' +
+      '<div class="mstrip"><span class="mt">距考研还有</span><b>' + left + '</b><span class="mt">天</span><span class="md">D-DAY · ' + EXAM + '</span></div>';
+    // 数字滚动
+    var el = document.querySelector("#cd .n"), sb = document.querySelector("#cd .mstrip b");
+    var t0 = performance.now();
+    (function step(t){
+      var p = Math.min(1, (t - t0)/900), e = 1 - Math.pow(1 - p, 3);
+      var v = Math.round(left * e);
+      el.textContent = v; if (sb) sb.textContent = v;
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  } else if (left === 0){
+    document.getElementById("cd").innerHTML =
+      dl + '<div class="n" style="font-size:56px;padding:8px 0">D-DAY</div>' +
+      '<div class="cap">EXAM DAY · ' + EXAM + '</div><div class="cap2">今 天 上 考 场 · 加 油</div>' +
+      '<div class="mstrip"><span class="mt">今天上考场 · 加油</span><span class="md">D-DAY · ' + EXAM + '</span></div>';
+  } else {
+    document.getElementById("cd").innerHTML =
+      dl + '<div class="n" style="font-size:50px;padding:10px 0">ENDED</div>' +
+      '<div class="cap">EXAM WAS ' + EXAM + '</div><div class="cap2">考 试 已 结 束</div>' +
+      '<div class="mstrip"><span class="mt">考试已结束</span><span class="md">EXAM WAS · ' + EXAM + '</span></div>';
+  }
+})();
+</script>
+</body>
+</html>
